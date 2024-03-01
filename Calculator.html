@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculator</title>
+    <style>
+        #Container{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="Container">
+        <input type="number" id="number1" placeholder="Enter 1st Number"/>&nbsp;
+        <input type="number" id="number2" placeholder="Enter 2nd Number"/><br><br>
+        <button onclick="getData('add')">Add</button>&nbsp;
+        <button onclick="getData('subtract')">Subtract</button>&nbsp;
+        <button onclick="getData('multiply')">Multiply</button>&nbsp;
+        <button onclick="getData('divide')">Divide</button>
+        
+    </div>
+<script>
+     function getData(operation){
+        var number1=document.getElementById("number1").value;
+        var number2=document.getElementById("number2").value;
+
+        number1 = parseFloat(number1);
+        number2 = parseFloat(number2);
+
+
+     
+     var result;
+     switch(operation){
+        case 'add':
+            result=number1+number2;
+            break;
+        case 'subtract':
+            result=number1-number2;
+            break;
+        case 'multiply':
+            result=number1*number2;
+            break;
+        case 'divide':
+            if (number2 !== 0) {
+            result = number1 / number2;
+            } else {
+            alert("Cannot divide by zero.");
+            return;
+            }
+            break;
+        default:
+            alert("Invalid Operation");
+            return;
+     }
+     alert("Result : "+result);
+     }
+</script>
+</body>
+</html>
